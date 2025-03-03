@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "SxcMC",
-  description: "the minecraft server",
+  description: "クロスプレイ対応のMinecraftサーバー。新しい地形で経済サバイバル。",
 };
 
 export default function RootLayout({

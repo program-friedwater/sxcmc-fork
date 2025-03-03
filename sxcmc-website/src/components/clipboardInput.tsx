@@ -10,7 +10,7 @@ export default function ClipboardInput( { text }: { text : string} ) {
     try {
       await navigator.clipboard.writeText(text);
       setCopyIcon(<ClipboardCheck />);
-    } catch (err) {
+    } catch (error) {
       setCopyIcon(<ClipboardX />);
     }
   };
