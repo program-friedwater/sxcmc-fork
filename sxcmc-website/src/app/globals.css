@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #ffffff;
+  --card-background: #f0f0f0;
+  --item-background: #dbdbdb;
+  --code-background: #d1d1d1; 
+  --foreground: #171717;
+  --accent: #81c784;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121212;
+    --card-background: #1e1e1e;
+    --item-background: #282828;
+    --code-background: #4a4a4a; 
+    --foreground: #ededed;
+    --accent: #81c784;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navAnimation {
+  animation: revealElement .3s forwards;
+}
+@keyframes revealElement {
+  0% {
+    clip-path: inset(0 0 100% 0); /* 最初は下から隠れる */
+  }
+  100% {
+    clip-path: inset(0 0 0 0); /* 完全に表示される */
+  }
+}
+
+.markdown {
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    @apply my-5 pb-2 text-3xl font-semibold border-[var(--accent)] border-b-2;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--accent);
+    padding-left: 0.5rem;
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+  }
+
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+  }
+
+  a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  code {
+    background-color: var(--code-background);
+    margin: 0 5px;
+    padding: 0 5px;
+    border-radius: 2px;
+  }
+}
