@@ -18,6 +18,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "SxcMC",
   description: "クロスプレイ対応のMinecraftサーバー。新しい地形で経済サバイバル。",
+  openGraph: {
+    images: ["https://sxcmc.vercel.app/images/banner.webp"]
+  },
+  verification: {
+    google: "BCXkHuN0X-nlOp144yNpu54ds-BW9CnzTcDFeZsB0Os",
+  },
 };
 
 export default function RootLayout({

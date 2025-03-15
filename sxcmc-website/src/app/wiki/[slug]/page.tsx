@@ -35,7 +35,7 @@ export default async function Page({
           <Link className="flex pl-2 pr-3 border-2 border-white/50 rounded-md" href="/wiki"><ArrowLeft />戻る</Link>
           <div className="flex ml-auto opacity-75">
             {data.author && <><UserRoundPen /><p className="ml-1 mr-3">{data.author}</p></>}
-            {data.date && <><Clock4 /><p className="ml-1 mr-3">{data.date.toLocaleDateString()}</p></>}
+            {data.date && <><Clock4 /><p className="ml-1 mr-3">{data.date.toISOString().split("T")[0].replace(/-/g, "/")}</p></>}
           </div>
         </div>
         <div className="markdown">

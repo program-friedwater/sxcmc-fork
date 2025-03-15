@@ -18,6 +18,9 @@ export default function Header() {
 	const toggleNav = () => {
     setIsNavVisible((prevState) => !prevState);
   };
+	const hideNav = () => {
+		if (isNavVisible) setIsNavVisible(false);
+  };
 	
 	const pathname = usePathname();
 
@@ -29,9 +32,9 @@ export default function Header() {
 			<div className={`${isNavVisible || "md:hidden"} block ml-auto p-1 rounded-md border-2 border-white/50`} onClick={toggleNav}>
 				{isNavVisible ? <X /> : <Menu />}
 			</div>
-			<div className={`md:flex ${isNavVisible? "navAnimation flex flex-col fixed top-13 left-0 items-start bg-neutral-800":"hidden"} mr-6 w-full justify-end items-center`}>
+			<div className={`md:flex ${isNavVisible? "showNavAnimation flex flex-col fixed top-13 left-0 items-start bg-neutral-800":"hidden"} mr-6 w-full justify-end items-center`}>
 				{headerContents.map((content, i) => (
-					<Link key={i} className={`md:w-auto w-full md:mx-2 mx:0 md:p-0 py-2 pl-8 text-left ${content.href === `/${pathname.split("/")[1]}` ? "text-[var(--accent)]" : "text-white"} ${isNavVisible && "hover:bg-neutral-700 transition-colors"}`} href={content.href}>
+					<Link key={i} onClick={hideNav} className={`md:w-auto w-full md:mx-2 mx:0 md:p-0 py-2 pl-8 text-left ${content.href === `/${pathname.split("/")[1]}` ? "text-[var(--accent)]" : "text-white"} ${isNavVisible && "hover:bg-neutral-700 transition-colors"}`} href={content.href}>
 						{content.label}
 					</Link>
 				))}

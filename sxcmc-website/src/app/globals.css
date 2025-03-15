@@ -31,10 +31,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.navAnimation {
-  animation: revealElement .3s forwards;
+.showNavAnimation {
+  animation: showNavbar .3s forwards;
 }
-@keyframes revealElement {
+@keyframes showNavbar {
   0% {
     clip-path: inset(0 0 100% 0); /* 最初は下から隠れる */
   }

@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://sxcmc.vercel.app
+
+# Sitemaps
+Sitemap: https://sxcmc.vercel.app/sitemap.xml
